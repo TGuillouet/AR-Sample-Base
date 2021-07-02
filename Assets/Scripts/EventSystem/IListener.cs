@@ -5,6 +5,6 @@
     /// </summary>
     interface IListener
     {
-        void HandleEvent(EventTypes eventType, object value);
+        void HandleEvent(object value);
     }
 }

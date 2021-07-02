@@ -46,10 +46,9 @@ public class GameManager: MonoBehaviour
     /// <summary>
     /// Dispatch an event to the managers
     /// </summary>
-    /// <param name="eventType">The event to handle (should be a EventTypes)</param>
     /// <param name="value">A struct that will represent the event value</param>
-    public void DispatchEvent(EventTypes eventType, object value)
+    public void DispatchEvent(object value)
     {
-        _publisher.Notify(eventType, value);
+        _publisher.Notify(value);
     }
 }

@@ -27,12 +27,11 @@ namespace EventSystem
         /// <summary>
         /// Notify the listeners to handle the events
         /// </summary>
-        /// <param name="eventType"></param>
         /// <param name="value"></param>
-        public void Notify(EventTypes eventType, object value)
+        public void Notify(object value)
         {
             foreach (IListener listener in listeners)
-                listener.HandleEvent(eventType, value);
+                listener.HandleEvent(value);
         }
     }
 }

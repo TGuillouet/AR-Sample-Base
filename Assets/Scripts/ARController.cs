@@ -18,13 +18,13 @@ public class ARController : MonoBehaviour
         if (ARSession.state == ARSessionState.Unsupported)
         {
             // Start some fallback experience for unsupported devices
-            GameManager.current.DispatchEvent(EventTypes.UIUpdateText, new UIUpdateTextEvent("status_text", "AR not initialized"));
+            GameManager.current.DispatchEvent(new UIUpdateTextEvent("status_text", "AR not initialized"));
         }
         else
         {
             // Start the AR session
             m_Session.enabled = true;
-            GameManager.current.DispatchEvent(EventTypes.UIUpdateText, new UIUpdateTextEvent("status_text", "AR initialized"));
+            GameManager.current.DispatchEvent(new UIUpdateTextEvent("status_text", "AR initialized"));
         }
     }
 }

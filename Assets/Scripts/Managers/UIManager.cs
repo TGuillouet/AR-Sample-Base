@@ -10,15 +10,14 @@ namespace Managers
         /// <summary>
         /// Define how the published event will be handled 
         /// </summary>
-        /// <param name="eventType">The event to handle (should be a EventTypes)</param>
         /// <param name="value">A struct that will represent the event value</param>
-        public void HandleEvent(EventTypes eventType, object value)
+        public void HandleEvent(object value)
         {
-            if (!(value is UIUpdateTextEvent)) return;
-            
-            UIUpdateTextEvent uiUpdateTextEvent = (UIUpdateTextEvent) value;
-            if (eventType == EventTypes.UIUpdateText)
-                this.setText(uiUpdateTextEvent.name, uiUpdateTextEvent.value);
+            if (value is UIUpdateTextEvent)
+            {
+                UIUpdateTextEvent uiUpdateTextEvent = (UIUpdateTextEvent) value;
+                setText(uiUpdateTextEvent.name, uiUpdateTextEvent.value);
+            }
         }
 
         private void setText(String componentName, String text)
