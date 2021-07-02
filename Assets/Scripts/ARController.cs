@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using EventSystem;
+using EventSystem.Events.Sound;
+using EventSystem.Events.UI;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
@@ -19,6 +21,10 @@ public class ARController : MonoBehaviour
         {
             // Start some fallback experience for unsupported devices
             GameManager.current.DispatchEvent(new UIUpdateTextEvent("status_text", "AR not initialized"));
+            GameManager.current.DispatchEvent(new PlayInitSound(
+                "bensound-scifi",
+                0.05f
+            ));
         }
         else
         {

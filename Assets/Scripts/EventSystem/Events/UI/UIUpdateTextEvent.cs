@@ -1,4 +1,4 @@
-﻿namespace EventSystem
+﻿namespace EventSystem.Events.UI
 {
     public struct UIUpdateTextEvent
     {

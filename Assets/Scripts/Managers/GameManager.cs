@@ -15,6 +15,7 @@ public class GameManager: MonoBehaviour
 
     private readonly EventPublisher _publisher = new EventPublisher();
     private UIManager _uiManager;
+    private SoundManager _soundManager;
 
     private GameManager() {}
     
@@ -31,8 +32,10 @@ public class GameManager: MonoBehaviour
     private void Start()
     {
         _uiManager = FindObjectOfType<UIManager>();
+        _soundManager = FindObjectOfType<SoundManager>();
         
         _publisher.Subscribe(_uiManager);
+        _publisher.Subscribe(_soundManager);
     }
 
     /// <summary>
